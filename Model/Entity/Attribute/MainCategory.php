@@ -19,6 +19,7 @@ class MainCategory extends ArrayBackend
         parent::beforeSave($object);
 
         $mainCategory = explode(',', $object->getMainCategory() ?? '');
+        $mainCategory = array_filter($mainCategory);
         if (count($mainCategory) > 1) {
             $object->setMainCategory($mainCategory[0]);
         }
@@ -28,7 +29,7 @@ class MainCategory extends ArrayBackend
 
     public function afterLoad($object): MainCategory
     {
-        $object->setMainCategory(explode(',', $object->getMainCategory() ?? ''));
+        $object->setMainCategory(array_filter(explode(',', $object->getMainCategory() ?? '')));
 
         return $this;
     }
