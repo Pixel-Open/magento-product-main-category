@@ -1,0 +1,27 @@
+{
+  "name": "pixelopen/magento-product-main-category",
+  "description": "The module adds a main category attribute to product",
+  "require": {
+    "php": "^8",
+    "magento/module-catalog": "*",
+    "magento/module-eav": "*",
+    "magento/framework": "*"
+  },
+  "type": "magento2-module",
+  "version": "100.1.0",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "PixelOpen\\ProductMainCategory\\": ""
+    }
+  },
+  "authors": [
+    {
+      "name": "Pixel Open",
+      "homepage": "https://pixel-open.org/",
+      "role": "Developer"
+    }
+  ]
+}
